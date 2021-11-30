@@ -144,3 +144,23 @@ body {
 .post-icons {
   margin-top: -10px;
 }
+/* ///////////////////Post//////////////////////////////// */
+.tweeted-div {
+  border-bottom: 0.1px solid #ccc;
+  /* background-color: lightblue; */
+  display: flex;
+  padding: 20px;
+}
+.bold {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 5px;
+}
+.inline-block {
+  display: inline-block;
+}
+.post-upper-div {
+  margin-left: 10px;
+  width: 100%;
+}

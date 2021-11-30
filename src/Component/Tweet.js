@@ -8,10 +8,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateInput, clickTweetButton } from "../Action/Action";
 
 function Tweet() {
-  const text = useSelector((state) => state.text);
-  console.log("text", text);
-  // const [val, setVal] = useState("");
-  // const [tweet, setTweet] = useState(false);
+  // const text = useSelector((state) => state.text);
+  const [val, setVal] = useState("");
+  const [tweet, setTweet] = useState([]);
   const dispatch = useDispatch();
   return (
     <div className="post-tweet">
@@ -24,8 +23,9 @@ function Tweet() {
         <input
           type="text"
           placeholder="What's happening"
+          value={val}
           onChange={(event) => {
-            dispatch(updateInput(event.target.value));
+            setVal(event.target.value);
           }}
         />
         <div className="globe border-bottom">
@@ -53,7 +53,10 @@ function Tweet() {
           <button
             // disabled={val}
             onClick={() => {
-              dispatch(clickTweetButton(true, text));
+              dispatch(updateInput(val));
+              dispatch(clickTweetButton(true, val, [...tweet, val]));
+              setTweet([...tweet, val]);
+              setVal("");
             }}
           >
             Tweet

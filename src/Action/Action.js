@@ -4,10 +4,11 @@ const updateInput = (input) => {
     payload: { text: input },
   };
 };
-const clickTweetButton = (toggle, text) => {
+const clickTweetButton = (toggle, text, tweets) => {
+  console.log(toggle, text, tweets);
   return {
     type: "TWEET_BUTTON",
-    payload: { clicked: toggle, text: text },
+    payload: { clicked: toggle, text: text, tweets: tweets },
   };
 };
 export { updateInput, clickTweetButton };
