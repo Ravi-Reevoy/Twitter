@@ -15,7 +15,9 @@ export default function App() {
         <Content />
         <Post />
       </div>
-      <div className="right">{/* <ReplyThread /> */}</div>
+      <div className="right">
+        <ReplyThread />
+      </div>
     </div>
   );
 }

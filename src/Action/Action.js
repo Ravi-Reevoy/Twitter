@@ -16,4 +16,16 @@ const storage = (data) => {
     payload: { data: data },
   };
 };
-export { updateInput, clickTweetButton, storage };
+const replyTweet = (text, toggle) => {
+  return {
+    type: "REPLY_TWEET",
+    payload: { text: text, toggle: toggle },
+  };
+};
+const replyToReply = (plaintext, toggle) => {
+  return {
+    type: "REPLY_TO_REPLY",
+    payload: { plaintext: plaintext, toggle: toggle },
+  };
+};
+export { updateInput, clickTweetButton, storage, replyTweet, replyToReply };

@@ -1,10 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { BsThreeDots } from "react-icons/bs";
 import "../App.css";
+import { replyTweet } from "../Action/Action";
 export function ShowPost(props) {
+  const dispatch = useDispatch();
   const { text } = props;
+  //   const { text } = useSelector((state) => {
+  //     console.log(state);
+  //     return state;
+  //   });
   return (
-    <div className="tweeted-div">
+    <div
+      className="tweeted-div"
+      onClick={() => {
+        dispatch(replyTweet(text, true));
+      }}
+    >
       <div className="account">
         <div>
           <p>R</p>
@@ -21,7 +32,6 @@ export function ShowPost(props) {
         <section>
           <p>{text}</p>
         </section>
-        <button>reply</button>
       </section>
     </div>
   );
@@ -31,7 +41,7 @@ function Post() {
     return state;
   }); //destructoring state
   return (
-    <div>
+    <div className="column-reverse">
       {tweets
         ? tweets.map((ele, i) => {
             return <ShowPost key={ele + "" + i} text={ele} />;
