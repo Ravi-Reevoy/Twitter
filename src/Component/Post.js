@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { BsThreeDots } from "react-icons/bs";
 import "../App.css";
-function ShowPost(props) {
+export function ShowPost(props) {
   const { text } = props;
   return (
     <div className="tweeted-div">
@@ -27,14 +27,18 @@ function ShowPost(props) {
   );
 }
 function Post() {
-  const { tweets } = useSelector((state) => {
+  const { tweets, data } = useSelector((state) => {
     return state;
   }); //destructoring state
   return (
     <div>
-      {tweets !== undefined
-        ? tweets.map((ele) => {
-            return <ShowPost key={ele} text={ele} />;
+      {tweets
+        ? tweets.map((ele, i) => {
+            return <ShowPost key={ele + "" + i} text={ele} />;
+          })
+        : data
+        ? data.map((ele, i) => {
+            return <ShowPost key={ele + "" + i} text={ele} />;
           })
         : null}
     </div>

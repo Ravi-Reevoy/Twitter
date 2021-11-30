@@ -1,17 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../App.css";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { AiOutlineGif } from "react-icons/ai";
 import { ImParagraphLeft } from "react-icons/im";
 import { BsEmojiSmile, BsCalendar4, BsCardImage } from "react-icons/bs";
-import { useSelector, useDispatch } from "react-redux";
-import { updateInput, clickTweetButton } from "../Action/Action";
+import { useDispatch } from "react-redux";
+import { updateInput, clickTweetButton, storage } from "../Action/Action";
 
 function Tweet() {
   // const text = useSelector((state) => state.text);
   const [val, setVal] = useState("");
   const [tweet, setTweet] = useState([]);
   const dispatch = useDispatch();
+  useEffect(
+    function () {
+      let localData = JSON.parse(localStorage.getItem("Tweets"));
+      setTweet(localData ? localData : []);
+      dispatch(storage(localData));
+    },
+    [dispatch]
+  );
+  function local(data) {
+    const array = JSON.parse(localStorage.getItem("Tweets"));
+    let tweetArray = array ? [...array, data] : [data];
+    localStorage.setItem("Tweets", JSON.stringify(tweetArray));
+  }
   return (
     <div className="post-tweet">
       <div className="account">
@@ -57,6 +70,7 @@ function Tweet() {
               dispatch(clickTweetButton(true, val, [...tweet, val]));
               setTweet([...tweet, val]);
               setVal("");
+              local(val);
             }}
           >
             Tweet

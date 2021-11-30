@@ -4,6 +4,7 @@ import "./App.css";
 import Explore from "./sections/Explore";
 import Content from "./sections/Content";
 import Post from "./Component/Post";
+import ReplyThread from "./Component/ReplyThread";
 export default function App() {
   return (
     <div className="container">
@@ -14,7 +15,7 @@ export default function App() {
         <Content />
         <Post />
       </div>
-      <div className="right"></div>
+      <div className="right">{/* <ReplyThread /> */}</div>
     </div>
   );
 }

@@ -5,10 +5,15 @@ const updateInput = (input) => {
   };
 };
 const clickTweetButton = (toggle, text, tweets) => {
-  console.log(toggle, text, tweets);
   return {
     type: "TWEET_BUTTON",
     payload: { clicked: toggle, text: text, tweets: tweets },
   };
 };
-export { updateInput, clickTweetButton };
+const storage = (data) => {
+  return {
+    type: "LOCAL_STORAGE",
+    payload: { data: data },
+  };
+};
+export { updateInput, clickTweetButton, storage };

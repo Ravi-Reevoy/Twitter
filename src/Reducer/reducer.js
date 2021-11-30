@@ -1,5 +1,7 @@
 const initialTweet = {
   text: "",
+  toggle: false,
+  tweet: {},
 };
 
 const reducer = (state = initialTweet, action) => {
@@ -7,7 +9,8 @@ const reducer = (state = initialTweet, action) => {
     case "TWEET_POST":
       return action.payload;
     case "TWEET_BUTTON":
-      // console.log(action.type);
+      return action.payload;
+    case "LOCAL_STORAGE":
       return action.payload;
     default:
       return state;
