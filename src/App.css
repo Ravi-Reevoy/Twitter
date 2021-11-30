@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
+
+body {
+  box-sizing: border-box;
+  min-width: 100vh;
+  margin: 0;
+  font-family: "Quicksand", sans-serif;
+  padding: 0;
+}
+.container {
+  display: flex;
+}
+.left {
+  min-width: 25%;
+  /* background-color: lightsalmon; */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+.middle {
+  min-width: 45%;
+  border-left: 0.1px solid #ccc;
+  border-right: 0.1px solid #ccc;
+  min-height: 100vh;
+}
+.right {
+  min-width: 30%;
+  /* background-color: lawngreen; */
+  min-height: 100vh;
+}
+/* Twitter icon */
+.left-container {
+  width: 70%;
+  /* background-color: lightblue; */
+}
+.twitter-icon {
+  color: rgb(29, 155, 240);
+  font-size: 30px;
+  margin-top: 10px;
+}
+.home {
+  /* background-color: #ccc; */
+  border: 10px;
+}
+.home div {
+  display: inline-block;
+  padding: 5px;
+}
+.home div:hover {
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.home-icon {
+  font-size: 26px;
+  margin-right: 15px;
+}
+.home span {
+  /* background-color: yellow; */
+  font-size: 22px;
+}
+.marginTop-30px {
+  margin-top: 20px;
+}
+.tweet-button {
+  background-color: rgb(29, 155, 240);
+  margin-top: 30px;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+}
+/* ///////////////////Content.js////////////////////// */
+
+.upperDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 1px, 1px 0px, 1px 1px;
+  border-bottom: 0.1px solid #ccc;
+}
+
+.post-tweet {
+  height: 120px;
+  display: flex;
+  padding: 12px;
+  justify-content: space-between;
+  border-bottom: 0.1px solid #ccc;
+}
+
+.account div {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ff5e00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+}
+.text-tweet input {
+  width: 500px;
+  font-size: 20pt;
+  border: transparent;
+}
+.text-tweet div {
+  margin-top: 8px;
+  color: rgb(29, 155, 240);
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+.text-tweet div span {
+  margin-left: 5px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+.text-tweet button {
+  background-color: rgb(29, 155, 240);
+  color: white;
+  border-radius: 20px;
+  border: transparent;
+  width: 80px;
+  height: 40px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.border-bottom {
+  border-bottom: 0.1px solid #ccc;
+}
+.post-icons div {
+  display: inline-block;
+  margin-right: 15px;
+}
+.post-icons {
+  margin-top: -10px;
+}
